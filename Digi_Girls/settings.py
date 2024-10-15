@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     #project applications:
     'app',
     'rest_framework',
-    'phone_field',
     'drf_yasg',
     'corsheaders',
 ]

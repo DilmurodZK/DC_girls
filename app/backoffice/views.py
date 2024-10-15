@@ -7,8 +7,8 @@ import calendar
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
-from xlutils.copy import copy
-from xlrd import open_workbook
+#from xlutils.copy import copy
+#from xlrd import open_workbook
 from django.http import HttpResponse
 import os
 from django.views.generic.base import TemplateView
@@ -21,7 +21,7 @@ def signin_view(request):
         password = request.POST.get('password')
         usr = authenticate(username=username, password=password)
         if usr is not None:
-            login(request,usr)
+            login(request, usr)
             return redirect('dashboard-url')
     return render(request, 'log-in.html')
 
@@ -41,7 +41,7 @@ def password_view(request):
     context = {
         'user': request.user
     }
-    return render(request, 'change-password.html' , context)
+    return render(request, 'change-password.html', context)
 
 
 @login_required(login_url='login-url')
